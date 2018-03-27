@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
     <title>Leapyeardetector</title>
 </head>
 
@@ -14,8 +16,40 @@
         <h4>
             <strong>Enter a year find out if it's a leap year</strong>
         </h4>
-        <button class="button" type="button">Find out!</button>
+        <form>
+            <input type="number" id="mynumber" placeholder="Enter year">
+        </form><br>
+        <button class="button" id="number" type="button">Find out!</button>
+        <h1 id="ans"></h1>
     </div>
+
+<script>
+
+      $(function(){
+     
+         $("#number").click(function(){
+        //    alert("you clicked me");
+            var year = parseInt($("#mynumber").val());
+            
+            if(year%4 ==0 && year%100 !=0 || year%400==0 ){
+                // alert(year+" is a leap year");
+                $("h1").text(year+" is a leap year");
+            }else{
+                // alert(year+" is not a leap year");
+                $("#ans").text(year+" is not a leap year");
+            }
+
+         });
+         
+            
+});
+
+</script>
+
+
+
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
+
